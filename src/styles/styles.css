@@ -45,6 +45,11 @@ body {
     height: 260px;
 }
 
+.fighter-image-mirror {
+    height: 260px;
+    transform: scale(-1, 1);
+}
+
 #loading-overlay {
     position: absolute;
     top: 0;

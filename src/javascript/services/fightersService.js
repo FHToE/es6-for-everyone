@@ -1,4 +1,5 @@
 import { callApi } from '../helpers/apiHelper';
+import { fightersDetails } from '../helpers/mockData'; //my line
 
 export async function getFighters() {
   try {
@@ -12,6 +13,8 @@ export async function getFighters() {
 }
 
 export async function getFighterDetails(id) {
+  var fighter = fightersDetails.find((it) => it._id === id); //my line
   // endpoint - `details/fighter/${id}.json`;
+  return fighter;
 }
 

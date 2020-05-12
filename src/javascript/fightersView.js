@@ -3,6 +3,7 @@ import { showFighterDetailsModal } from './modals/fighterDetails';
 import { createElement } from './helpers/domHelper';
 import { fight } from './fight';
 import { showWinnerModal } from './modals/winner';
+import { getFighterDetails } from './services/fightersService'; //myline
 
 export function createFighters(fighters) {
   const selectFighterForBattle = createFightersSelector();
@@ -22,6 +23,7 @@ async function showFighterDetails(event, fighter) {
 }
 
 export async function getFighterInfo(fighterId) {
+  return getFighterDetails(fighterId); //my line
   // get fighter form fightersDetailsCache or use getFighterDetails function
 }
 

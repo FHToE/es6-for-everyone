@@ -8,15 +8,25 @@ export  function showFighterDetailsModal(fighter) {
 }
 
 function createFighterDetails(fighter) {
-  const { name } = fighter;
-
-  const fighterDetails = createElement({ tagName: 'div', className: 'modal-body' });
-  const nameElement = createElement({ tagName: 'span', className: 'fighter-name' });
+  const { name, health, attack, defense, source } = fighter;
   
+
+  var attributes = { align: "center" };
+  const fighterDetails = createElement({ tagName: 'div', className: 'modal-body', attributes });
+  const nameElement = createElement({ tagName: 'p', className: 'fighter-name' });
+  const healthElement = createElement({ tagName: 'p', className: 'fighter-health' });
+  const attackElement = createElement({ tagName: 'p', className: 'fighter-attack' });
+  const defenseElement = createElement({ tagName: 'p', className: 'fighter-defense' });
+  attributes = { src: source };
+  const imgElement = createElement({ tagName: 'img', className: 'fighter-image-mirror', attributes });
   // show fighter name, attack, defense, health, image
 
-  nameElement.innerText = name;
-  fighterDetails.append(nameElement);
+  nameElement.innerText = 'Name: ' + name;
+  healthElement.innerText = 'Health: ' + health + ' HP';
+  attackElement.innerText = 'Attack: ' + attack;
+  defenseElement.innerText = 'Defence: ' + defense;
+
+  fighterDetails.append(nameElement, healthElement, attackElement, defenseElement, imgElement);
 
   return fighterDetails;
 }
