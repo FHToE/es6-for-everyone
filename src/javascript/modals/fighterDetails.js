@@ -10,7 +10,6 @@ export  function showFighterDetailsModal(fighter) {
 function createFighterDetails(fighter) {
   const { name, health, attack, defense, source } = fighter;
   
-
   var attributes = { align: "center" };
   const fighterDetails = createElement({ tagName: 'div', className: 'modal-body', attributes });
   const nameElement = createElement({ tagName: 'p', className: 'fighter-name' });
