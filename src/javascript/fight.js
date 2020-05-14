@@ -103,7 +103,7 @@ function createFighterForFight(firstFighter, secondFighter) {
   let health1 = firstFighter.health;
   let source1 = firstFighter.source;
   
-  let attributes = { align: "left" };
+  let attributes = { width: "200", valign: "top", align: "left" };
   const firstfighterDetails = createElement({ tagName: 'td', className: 'modal-body', attributes });
   let nameElement = createElement({ tagName: 'p', className: 'fighter-name' });
   let healthElement = createElement({ tagName: 'p', className: 'modal-root' });
@@ -124,8 +124,7 @@ function createFighterForFight(firstFighter, secondFighter) {
   let name2 = secondFighter.name;
   let health2 = secondFighter.health;
   let source2 = secondFighter.source;
-
-  attributes = { align: "right" };
+  attributes = { valign: "top", align: "right" };
   const secondfighterDetails = createElement({ tagName: 'td', className: 'modal-body', attributes });
   nameElement = createElement({ tagName: 'p', className: 'fighter-name' });
   healthElement = createElement({ tagName: 'p', className: 'modal-root' });
@@ -140,13 +139,12 @@ function createFighterForFight(firstFighter, secondFighter) {
   currentHp2 = health2;
   currentHealthElement2.innerText = 'Current HP is ' + currentHp2;
   secondfighterDetails.append(nameElement, healthElement,  currentHealthElement2, getDamage2, imgElement);
-  firstfighterDetails.append(secondfighterDetails);
 
 
   //add fighters on tatami:)
   attributes = { width: "100%", cellspacing: "0", cellpadding: "5" };
   const tatami = createElement({ tagName: 'table', className: 'modal-body', attributes });
-  const cells = createElement({ tagName: 'tr', className: 'modal-body', attributes });
+  const cells = createElement({ tagName: 'tr', className: 'modal-body' });
   cells.append(firstfighterDetails, secondfighterDetails);
   tatami.append(cells);
   return tatami;
