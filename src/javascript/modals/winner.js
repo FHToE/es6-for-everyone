@@ -14,15 +14,13 @@ export  function showWinnerModal(fighter) {
 
 function createWinnerDetails(fighter) {
   const { name, source } = fighter;
-  
-  var attributes = { align: "center" };
+
+  let attributes = { align: "center" };
   const fighterDetails = createElement({ tagName: 'div', className: 'modal-body', attributes });
-  const nameElement = createElement({ tagName: 'p', className: 'fighter-name' });
+  const nameElement = createElement({ tagName: 'span', className: 'modal-root', attributes });
   attributes = { src: source };
-  const imgElement = createElement({ tagName: 'img', className: 'fighter-image-mirror', attributes });
-
-  nameElement.innerText = 'Unbeatable ' + name;
-
+  const imgElement = createElement({ tagName: 'img', className: 'fighter-image', attributes });
+  nameElement.innerText = name;
   fighterDetails.append(nameElement, imgElement);
 
   return fighterDetails;

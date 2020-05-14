@@ -106,10 +106,10 @@ function createFighterForFight(firstFighter, secondFighter) {
   let attributes = { align: "left" };
   const firstfighterDetails = createElement({ tagName: 'td', className: 'modal-body', attributes });
   let nameElement = createElement({ tagName: 'p', className: 'fighter-name' });
-  let healthElement = createElement({ tagName: 'p', className: 'fighter-health' });
-  currentHealthElement1 = createElement({ tagName: 'p', className: 'fighter1-current-health' });
+  let healthElement = createElement({ tagName: 'p', className: 'modal-root' });
+  currentHealthElement1 = createElement({ tagName: 'p', className: 'modal-root' });
   attributes = { align: "center" };
-  getDamage1 = createElement({ tagName: 'p', className: 'fighter-damage' , attributes });
+  getDamage1 = createElement({ tagName: 'p', className: 'modal-root' , attributes });
   attributes = { src: source1 };
   let imgElement = createElement({ tagName: 'img', className: 'fighter-image', attributes });
   getDamage1.innerText = ' ';
@@ -128,10 +128,10 @@ function createFighterForFight(firstFighter, secondFighter) {
   attributes = { align: "right" };
   const secondfighterDetails = createElement({ tagName: 'td', className: 'modal-body', attributes });
   nameElement = createElement({ tagName: 'p', className: 'fighter-name' });
-  healthElement = createElement({ tagName: 'p', className: 'fighter-health' });
-  currentHealthElement2 = createElement({ tagName: 'p', className: 'fighter2-current-health' });
+  healthElement = createElement({ tagName: 'p', className: 'modal-root' });
+  currentHealthElement2 = createElement({ tagName: 'p', className: 'modal-root' });
   attributes = { align: "center" };
-  getDamage2 = createElement({ tagName: 'p', className: 'fighter-damage', attributes });
+  getDamage2 = createElement({ tagName: 'p', className: 'modal-root', attributes });
   attributes = { src: source2 };
   imgElement = createElement({ tagName: 'img', className: 'fighter-image-mirror', attributes });
   getDamage2.innerText = ' ';

@@ -9,23 +9,23 @@ export  function showFighterDetailsModal(fighter) {
 
 function createFighterDetails(fighter) {
   const { name, health, attack, defense, source } = fighter;
-  
-  var attributes = { align: "center" };
+
+  let attributes = { align: "center" };
   const fighterDetails = createElement({ tagName: 'div', className: 'modal-body', attributes });
-  const nameElement = createElement({ tagName: 'p', className: 'fighter-name' });
-  const healthElement = createElement({ tagName: 'p', className: 'fighter-health' });
-  const attackElement = createElement({ tagName: 'p', className: 'fighter-attack' });
-  const defenseElement = createElement({ tagName: 'p', className: 'fighter-defense' });
+  const nameElement = createElement({ tagName: 'span', className: 'fighter-name', attributes });
+  const healthElement = createElement({ tagName: 'span', className: 'modal-root', attributes });
+  const attackElement = createElement({ tagName: 'span', className: 'modal-root', attributes });
+  const defenseElement = createElement({ tagName: 'span', className: 'modal-root', attributes });
   attributes = { src: source };
-  const imgElement = createElement({ tagName: 'img', className: 'fighter-image-mirror', attributes });
+  const imgElement = createElement({ tagName: 'img', className: 'fighter-image', attributes });
   // show fighter name, attack, defense, health, image
 
   nameElement.innerText = 'Name: ' + name;
-  healthElement.innerText = 'Health: ' + health + ' HP';
+  healthElement.innerText = 'Health: ' + health;
   attackElement.innerText = 'Attack: ' + attack;
-  defenseElement.innerText = 'Defence: ' + defense;
-
-  fighterDetails.append(nameElement, healthElement, attackElement, defenseElement, imgElement);
+  defenseElement.innerText = 'Defense: ' + defense;
+  
+  fighterDetails.append(nameElement, healthElement,  attackElement, defenseElement, imgElement);
 
   return fighterDetails;
 }

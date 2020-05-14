@@ -13,8 +13,12 @@ export async function getFighters() {
 }
 
 export async function getFighterDetails(id) {
-  var fighter = fightersDetails.find((it) => it._id === id); //my line
-  // endpoint - `details/fighter/${id}.json`;
-  return fighter;
+  try {
+    const endpoint = 'details/fighter/'+ id +'.json';
+    const apiResult = await callApi(endpoint, 'GET');
+    return apiResult;
+  } catch (error) {
+    throw error;
+  } 
 }
 
